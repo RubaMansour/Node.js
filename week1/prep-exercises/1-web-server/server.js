@@ -11,12 +11,12 @@ let server = http.createServer(async function (req, res) {
     if (req.url === "/") {
       const data = await fs.readFile("index.html");
       res.writeHead(200, { 'Content-Type': 'text/html' });
-	    res.write(data);
+      res.write(data);
       res.end();
     } else if (req.url === "/index.js") {
       const data = await fs.readFile("index.js");
       res.writeHead(200, { 'Content-Type': 'application/javascript' });
-	    res.write(data);
+      res.write(data);
       res.end();
     } else {
       res.writeHead(404, { 'Content-Type': 'text/plain' });
