@@ -57,6 +57,9 @@ const makeInMemoryDb = () => {
         },
         getById: (id) => {
             return localDb.find(user => user.id === id) || undefined
+        },
+        getByUsername: (username) => {
+            return localDb.find(user => user.username === username) || undefined
         }
     }
 }
@@ -78,6 +81,9 @@ const makeNewLokiDatabase = () => {
         },
         getById: (id) => {
             return users.findOne({id}) || undefined
+        },
+        getByUsername: (username) => {
+            return users.findOne({ username }) || undefined
         }
     }
 }
